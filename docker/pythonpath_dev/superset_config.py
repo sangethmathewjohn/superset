@@ -102,10 +102,21 @@ class CeleryConfig(object):
 CELERY_CONFIG = CeleryConfig
 
 FEATURE_FLAGS = {"ALERT_REPORTS": True}
-ALERT_REPORTS_NOTIFICATION_DRY_RUN = True
+ALERT_REPORTS_NOTIFICATION_DRY_RUN = False
+
+# Email configuration
+SMTP_HOST = "smtp.gmail.com" #change to your host
+SMTP_STARTTLS = True
+SMTP_SSL_SERVER_AUTH = False # If your using an SMTP server with a valid certificate
+SMTP_SSL = False
+SMTP_USER = "username"
+SMTP_PORT = 587 # your port eg. 587
+SMTP_PASSWORD = "enter your pass"
+SMTP_MAIL_FROM = "enter your smtp email id"
+
 WEBDRIVER_BASEURL = "http://superset:8088/"
 # The base URL for the email report hyperlinks.
-WEBDRIVER_BASEURL_USER_FRIENDLY = WEBDRIVER_BASEURL
+WEBDRIVER_BASEURL_USER_FRIENDLY = "http://localhost:8088/"
 
 SQLLAB_CTAS_NO_LIMIT = True
 
